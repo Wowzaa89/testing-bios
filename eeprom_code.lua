@@ -1,11 +1,12 @@
 local invoke = component.invoke
+local computer = computer or require('computer')
 
 local gpu = component.list("gpu")()
 local screen = component.list("screen")()
 local state = 0
-local text = "You are an idiot"
+local text = "YOU'VE BEEN HACKED IDIOT!!! HAHAHAHHA!"
 
-if not gpu or not screen then error("You are an idiot") end
+if not gpu or not screen then error("YOU'VE BEEN HACKED IDIOT!!! HAHAHAHHA!") end
 invoke(gpu, "bind", screen)
 invoke(gpu, "setResolution", 50,16)
 
@@ -35,5 +36,5 @@ while true do
   invoke(gpu, "set", startx, starty, text)
   computer.beep()
 
-  Sleep(1)
+  Sleep(0.25)
 end
